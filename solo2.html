@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScoreBoard Pro - Basketball</title>
+    <link rel="stylesheet" href="solo2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="blob-container">
+        <div class="blob blob-orange"></div>
+        <div class="blob blob-purple"></div>
+    </div>
+    <main class="court-container">
+        <section class="team-card glass">
+            <input type="text" value="team1" class="player-input">
+            <div class="score-display f" id="sco-a">0</div>
+            
+            <div class="point-btns f">
+                <button onclick="inc(1, 'sco-a')">+1</button>
+                <button onclick="inc(2, 'sco-a')">+2</button>
+                <button onclick="inc(3, 'sco-a')">+3</button>
+            </div>
+            
+            <div class="bb-stats">
+                <div class="stat-group">
+                    <label>FOULS</label>
+                    <div class="counter-row">
+                        <span id="fo-a" class="stat-val f">0</span>
+                        <button class="plus-btn" onclick="inc(1, 'fo-a')">+</button>
+                    </div>
+                </div>
+                <div class="stat-group">
+                    <label>T.O.L</label>
+                    <div class="counter-row">
+                        <span id="tol-a" class="stat-val f">7</span>
+                        <button class="minus-btn" onclick="dec(1, 'tol-a')">-</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="center-console">
+            <div class="period-box glass">
+                <span>PERIOD</span>
+                <div id="period-num">1</div>
+            </div>
+            
+            <div class="main-clock glass">
+                <div class="time ">12:00</div>
+                <div class="shot-clock">24</div>
+            </div>
+
+            <div class="action-grid">
+                <button class="control-btn"><i class="fas fa-play"></i></button>
+                <button class="control-btn" onclick="reset('sco-a'), reset('tol-a'), reset('tol-b'), reset('fo-a'), reset('foul-b'), reset('sco-b')"><i class="fas fa-redo"></i></button>
+            </div>
+        </section>
+
+        <section class="team-card glass">
+            <input type="text" value="team2" class="player-input">
+            <div class="score-display f" id="sco-b">0</div>
+            
+            <div class="point-btns">
+                <button onclick="inc(1, 'sco-b')">+1</button>
+                <button onclick="inc(2, 'sco-b')">+2</button>
+                <button onclick="inc(3, 'sco-b')">+3</button>
+            </div>
+
+            <div class="bb-stats">
+                <div class="stat-group">
+                    <label>FOULS</label>
+                    <div class="counter-row">
+                        <span id="foul-b" class="stat-val f">0</span>
+                        <button class="plus-btn" onclick="inc(1, 'foul-b')">+</button>
+                    </div>
+                </div>
+                <div class="stat-group">
+                    <label>T.O.L</label>
+                    <div class="counter-row">
+                        <span id="tol-b" class="stat-val f">7</span>
+                        <button class="minus-btn" onclick="dec(1, 'tol-b')">-</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <a href="solo.html" class="back-btn" onclick="reset('sco-a'), reset('tol-a'), reset('tol-b'), reset('fo-a'), reset('foul-b'), reset('sco-b')"><i class="fas fa-chevron-left"></i> back</a>
+    <script src="solo.js"></script>
+</body>
+</html>

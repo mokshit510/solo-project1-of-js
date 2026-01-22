@@ -1,0 +1,127 @@
+:root {
+    --tennis-green: #dcf836;
+    --glass: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    margin: 0;
+    background: #0a0f0d;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blob-tennis {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(220, 248, 54, 0.15) 0%, transparent 70%);
+    z-index: -1;
+}
+
+.glass-board {
+    background: var(--glass);
+    backdrop-filter: blur(25px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 20px;
+    width: 90vw;
+    max-width: 900px;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+}
+
+.board-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+    padding: 10px 20px;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    opacity: 0.5;
+}
+
+.player-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+    align-items: center;
+    padding: 20px;
+    border-top: 1px solid var(--glass-border);
+}
+
+.player-input {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 80%;
+}
+@font-face {
+    font-family: 'MyCustomSportFont'; 
+    src: url('fonts/CursedTimerUlil-Aznm.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.f{
+  color:  #F94F6D;
+  font-family: 'MyCustomSportFont', sans-serif;
+}
+.stat-box {
+    font-size: 2rem;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
+
+.point.primary {
+    color: var(--tennis-green);
+    font-weight: 800;
+    text-shadow: 0 0 15px rgba(220, 248, 54, 0.4);
+}
+
+.win-btn {
+    background: var(--tennis-green);
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+.serve-icon {
+    color: var(--tennis-green);
+    margin-right: 10px;
+}
+
+.hidden { visibility: hidden; }
+
+.match-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.glass-btn {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.back-link {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: white;
+    text-decoration: none;
+    opacity: 0.6;
+}
+
+.glass-btn:hover { background: rgba(255,255,255,0.1); }

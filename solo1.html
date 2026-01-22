@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScoreBoard Pro - Football Match</title>
+    <link rel="stylesheet" href="solo1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    <main class="match-container">
+        <section class="team-card glass">
+            
+            <input type="text" value="Team 1" class="team-name">
+            <div class="score-display" id="score-a">0</div>
+            <div class="controls">
+                <button onclick="inc(1, 'score-a')" class="btn-main">+ Goal</button>
+                <button onclick="dec(1, 'score-a')" class="btn-sub">-</button>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span>Fouls</span>
+                    <div class="stat-counter">
+                        <button onclick="dec(1, 'foul-a')">-</button>
+                        <span id="foul-a" class="f">0</span>
+                        <button onclick="inc(1, 'foul-a')">+</button>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <span>Penalties</span>
+                    <div class="stat-counter">
+                        <button onclick="dec(1, 'pen-a')">-</button>
+                        <span id="pen-a" class="f">0</span>
+                        <button onclick="inc(1, 'pen-a')">+</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="match-info">
+            <div class="timer glass" id="display-tim">45:00</div>
+            <div class="match-actions">
+                <button class="icon-btn"><i class="fas fa-play"></i></button>
+                <button class="icon-btn" onclick="reset('score-a'), reset('pen-a'), reset('pen-b'), reset('foul-a'), reset('foul-b'), reset('score-b')"><i class="fas fa-undo"></i></button>
+            </div>
+        </section>
+
+        <section class="team-card glass">
+            <input type="text" value="Team 2" class="team-name">
+            <div class="score-display" id="score-b">0</div>
+            <div class="controls">
+                <button onclick="inc(1, 'score-b')" class="btn-main">+ Goal</button>
+                <button onclick="dec(1, 'score-b')" class="btn-sub">-</button>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span>Fouls</span>
+                    <div class="stat-counter">
+                        <button onclick="dec(1, 'foul-b')">-</button>
+                        <span id="foul-b" class="f">0</span>
+                        <button onclick="inc(1, 'foul-b')">+</button>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <span>Penalties</span>
+                    <div class="stat-counter">
+                        <button onclick="dec(1, 'pen-b')">-</button>
+                        <span id="pen-b" class="f">0</span>
+                        <button onclick="inc(1, 'pen-b')">+</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <a href="solo.html" class="back-link" onclick="reset('score-a'), reset('pen-a'), reset('pen-b'), reset('foul-a'), reset('foul-b'), reset('score-b')"><i class="fas fa-arrow-left"></i> End Match</a>
+    <script src="solo.js"></script>
+</body>
+</html>

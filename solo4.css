@@ -1,0 +1,143 @@
+:root {
+    --accent: #f8fafc;
+    --glass: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.12);
+}
+
+body {
+    margin: 0;
+    background: #020617;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@font-face {
+    font-family: 'MyCustomSportFont'; 
+    src: url('fonts/CursedTimerUlil-Aznm.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.f{
+  color:  #F94F6D;
+  font-family: 'MyCustomSportFont', sans-serif;
+}
+.modal-content {
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    color: white;
+}
+
+.start-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Scoreboard */
+.custom-wrapper {
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sport-title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    margin-bottom: 40px;
+    opacity: 0.6;
+}
+
+.scoreboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 200px 1fr;
+    gap: 30px;
+}
+
+.glass {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 40px;
+}
+
+.team-panel {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.score {
+    font-size: 12rem;
+    font-weight: 200;
+    margin: 20px 0;
+}
+
+.button-cluster {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.inc-btn, .dec-btn {
+    background: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dec-btn { background: transparent; border: 1px solid white; color: white; }
+
+.timer-box {
+    padding: 20px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+#timer { font-size: 2.5rem; margin-bottom: 10px; }
+
+#timer-toggle {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}

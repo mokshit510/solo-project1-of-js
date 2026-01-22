@@ -1,0 +1,200 @@
+:root {
+    --glass: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --orange: #ff8c00;
+    --red: #ff4b2b;
+}
+
+body {
+    margin: 0;
+    background: #050505;
+    color: white;
+    font-family: 'Monaco', 'Courier New', monospace; /* Digital feel */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blob-orange { width: 600px; height: 600px; background: rgba(255, 140, 0, 0.2); top: -10%; left: -10%; filter: blur(100px); position: absolute; z-index: -1; }
+.blob-purple { width: 500px; height: 500px; background: rgba(123, 31, 162, 0.2); bottom: -10%; right: -10%; filter: blur(100px); position: absolute; z-index: -1; }
+
+.court-container {
+    display: grid;
+    grid-template-columns: 1fr 220px 1fr;
+    gap: 20px;
+    width: 95%;
+    max-width: 1300px;
+}
+
+.glass {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+}
+
+/* Team Cards */
+.team-card {
+    padding: 30px;
+    text-align: center;
+}
+
+.score-display {
+    font-size: 10rem;
+    color: var(--orange);
+    font-family: 'Digital-7', sans-serif; /* You can use a digital font */
+    text-shadow: 0 0 30px rgba(255, 140, 0, 0.4);
+}
+
+.point-btns {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.point-btns button {
+    background: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.point-btns button:hover { background: var(--orange); color: white; }
+
+/* Stats (Fouls & Timeouts) */
+.bb-stats {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 20px;
+}
+
+.stat-group label { display: block; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 10px; }
+
+.counter-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.stat-val { font-size: 2rem; font-weight: bold; }
+
+.plus-btn, .minus-btn {
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Center Console */
+.center-console {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-clock {
+    padding: 20px;
+    text-align: center;
+}
+
+.time { font-size: 3rem; color: #fff; }
+
+.shot-clock {
+    font-size: 4rem;
+    color: var(--red);
+    border-top: 1px solid var(--glass-border);
+    margin-top: 10px;
+}
+
+.period-box {
+    text-align: center;
+    padding: 10px;
+}
+
+.period-box span { font-size: 0.6rem; }
+.f{
+  color:  #F94F6D;
+  font-family: 'MyCustomSportFont', sans-serif;
+}
+@font-face {
+    font-family: 'MyCustomSportFont'; 
+    src: url('fonts/CursedTimerUlil-Aznm.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+#period-num { font-size: 2rem; color: var(--orange); }
+
+.control-btn {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.modal-content {
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    color: white;
+}
+
+.start-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.player-input {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 80%;
+}

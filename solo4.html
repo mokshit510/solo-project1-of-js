@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScoreBoard Pro - Custom Game</title>
+    <link rel="stylesheet" href="solo4.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="blob-container">
+        <div class="blob blob-custom"></div>
+    </div>
+
+    <div id="setup-modal" class="modal-overlay">
+        <div class="modal-content glass">
+            <h2>Game Setup</h2>
+            <input type="text" id="input-sport" placeholder="Sport Name (e.g. Volleyball)">
+            <div class="input-group">
+                <input type="text" id="input-t1" placeholder="Team 1 Name">
+                <input type="text" id="input-t2" placeholder="Team 2 Name">
+            </div>
+            <button onclick="startGame()" class="start-btn">Initialize Match</button>
+        </div>
+    </div>
+
+    <main class="custom-wrapper">
+        <h1 id="display-sport" class="sport-title">Custom Match</h1>
+        
+        <div class="scoreboard-grid">
+            <div class="team-panel glass">
+                <h2 id="display-t1">Team 1</h2>
+                <div class="score f" id="score-1">0</div>
+                <div class="button-cluster">
+                    <button class="inc-btn" onclick="inc(1, 'score-1')">+1</button>
+                    <button class="inc-btn" onclick="inc(5, 'score-1')">+5</button>
+                    <button class="dec-btn" onclick="dec(1, 'score-1')">-</button>
+                </div>
+            </div>
+
+            <div class="center-panel">
+                <div class="timer-box glass">
+                    <div id="input-tim f">00:00</div>
+                    <button id="timer-toggle" onclick="toggleTimer()"><i class="fas fa-play"></i></button>
+                </div>
+                <button class="reset-match" onclick="location.reload()">New Setup</button>
+            </div>
+
+            <div class="team-panel glass">
+                <h2 id="display-t2">Team 2</h2>
+                <div class="score f" id="score-2">0</div>
+                <div class="button-cluster">
+                    <button class="inc-btn" onclick="inc(1, 'score-2')">+1</button>
+                    <button class="inc-btn" onclick="inc(5, 'score-2')">+5</button>
+                    <button class="dec-btn" onclick="dec(1, 'score-2')">-</button>
+            </div>
+        </div>
+    </main>
+    <a href="solo.html" class="back-btn" onclick="reset('score-1'), reset('score-2')"><i class="fas fa-chevron-left"></i> back</a>
+    <script src="solo.js"></script>
+</body>
+</html>
