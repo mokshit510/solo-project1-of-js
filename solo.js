@@ -3,11 +3,7 @@ let p1PointIdx = 0;
 let p2PointIdx = 0;
 
 function addPoint(player) {
-    if (player === 1) {
-        handleScoring('1', '2');
-    } else {
-        handleScoring('2', '1');
-    }
+    player === 1 ? handleScoring('1', '2') : handleScoring('2', '1')
 }
 
 function handleScoring(winner, loser) {
@@ -17,20 +13,11 @@ function handleScoring(winner, loser) {
     let winIdx = winner === '1' ? p1PointIdx : p2PointIdx;
     let loseIdx = loser === '1' ? p1PointIdx : p2PointIdx;
 
-    // Advantage Logic
-    if (scores[winIdx] === "40" && scores[loseIdx] === "40") {
-        updatePoint(winner, 4); // Advantage
-    } else if (scores[winIdx] === "40" && scores[loseIdx] === "AD") {
-        updatePoint(loser, 2); // Back to Deuce (30-40 logic)
-    } else if (scores[winIdx] === "AD" || (scores[winIdx] === "40" && loseIdx < 3)) {
-        winGame(winner);
-    } else {
-        updatePoint(winner, winIdx + 1);
-    }
+    scores[winIdx] === "40" && scores[loseIdx] === "40" ? updatePoint(winner, 4) : scores[winIdx] === "40" && scores[loseIdx] === "AD" ? updatePoint(loser, 2) : scores[winIdx] === "AD" || (scores[winIdx] === "40" && loseIdx < 3) ? winGame(winner) : updatePoint(winner, winIdx + 1)
 }
 
 function updatePoint(player, idx) {
-    if (player === '1') p1PointIdx = idx; else p2PointIdx = idx;
+    player === '1' ? p1PointIdx = idx : p2PointIdx = idx
     document.getElementById(`point-${player}`).innerText = scores[idx];
 }
 
@@ -79,12 +66,7 @@ function inc(point, id) {
 function dec(point, id){
     let el = document.getElementById(id)
     let currentCount = parseInt(el.innerText);
-    if((currentCount-point)<0){
-        el.innerText = 0;
-    }
-    else{
-        el.innerText = (currentCount-point);
-    }
+    (currentCount-point)<0 ? el.innerText = 0 : el.innerText = (currentCount-point)
 }
 function reset(id){
     count = 0;
