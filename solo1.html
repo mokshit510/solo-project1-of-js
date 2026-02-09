@@ -43,10 +43,13 @@
         </section>
 
         <section class="match-info">
-            <div class="timer glass" id="display-tim">45:00</div>
-            <div class="match-actions">
-                <button class="icon-btn"><i class="fas fa-play"></i></button>
-                <button class="icon-btn" onclick="reset('score-a'), reset('pen-a'), reset('pen-b'), reset('foul-a'), reset('foul-b'), reset('score-b')"><i class="fas fa-undo"></i></button>
+            <div id="display-tim">
+            <label>Give time in minutes</label>
+            <input type="number" min="0" value="0" class="timer glass team-name"  id="input-tim">
+            </div>
+            <div class="match-actions" id="match">
+                <button class="icon-btn" id="render"><i class="fas fa-play"></i></button>
+                <button class="icon-btn" onclick="re(), reset('score-a'), reset('pen-a'), reset('pen-b'), reset('foul-a'), reset('foul-b'), reset('score-b')"><i class="fas fa-undo"></i></button>
             </div>
         </section>
 
@@ -80,5 +83,6 @@
     </main>
     <a href="solo.html" class="back-link" onclick="reset('score-a'), reset('pen-a'), reset('pen-b'), reset('foul-a'), reset('foul-b'), reset('score-b')"><i class="fas fa-arrow-left"></i> End Match</a>
     <script src="solo.js"></script>
+    <script src="time1.js"></script>
 </body>
 </html>

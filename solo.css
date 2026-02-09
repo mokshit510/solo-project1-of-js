@@ -14,7 +14,9 @@ body {
     flex-direction: column;
     overflow: hidden;
 }
-
+a {
+    text-decoration: none;
+}
 /* Background Blobs Animation */
 .blob-container {
     position: fixed;

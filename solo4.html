@@ -19,6 +19,7 @@
             <div class="input-group">
                 <input type="text" id="input-t1" placeholder="Team 1 Name">
                 <input type="text" id="input-t2" placeholder="Team 2 Name">
+                <input type="number" id="input-t3" placeholder="give time in minutes" min="0">
             </div>
             <button onclick="startGame()" class="start-btn">Initialize Match</button>
         </div>
@@ -40,8 +41,8 @@
 
             <div class="center-panel">
                 <div class="timer-box glass">
-                    <div id="input-tim f">00:00</div>
-                    <button id="timer-toggle" onclick="toggleTimer()"><i class="fas fa-play"></i></button>
+                    <div id="display-tim">00:00</div>
+                    <button id="timer-toggle" ><i class="fas fa-play"></i></button>
                 </div>
                 <button class="reset-match" onclick="location.reload()">New Setup</button>
             </div>
@@ -58,5 +59,6 @@
     </main>
     <a href="solo.html" class="back-btn" onclick="reset('score-1'), reset('score-2')"><i class="fas fa-chevron-left"></i> back</a>
     <script src="solo.js"></script>
+    <script src="time4.js"></script>
 </body>
 </html>

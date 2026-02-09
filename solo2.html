@@ -14,7 +14,7 @@
     </div>
     <main class="court-container">
         <section class="team-card glass">
-            <input type="text" value="team1" class="player-input">
+            <input type="text" value="team 1" class="player-input">
             <div class="score-display f" id="sco-a">0</div>
             
             <div class="point-btns f">
@@ -48,18 +48,21 @@
             </div>
             
             <div class="main-clock glass">
-                <div class="time ">12:00</div>
+                <div class="time " id="display-tim">
+                    <label>give time in minutes</label>
+                    <input type="number" min="0" value="0" class="player-input" id="input-tim">
+                </div>
                 <div class="shot-clock">24</div>
             </div>
 
             <div class="action-grid">
-                <button class="control-btn"><i class="fas fa-play"></i></button>
-                <button class="control-btn" onclick="reset('sco-a'), reset('tol-a'), reset('tol-b'), reset('fo-a'), reset('foul-b'), reset('sco-b')"><i class="fas fa-redo"></i></button>
+                <button class="control-btn" id="render"><i class="fas fa-play"></i></button>
+                <button class="control-btn" onclick="re(),reset('sco-a'), reset('tol-a'), reset('tol-b'), reset('fo-a'), reset('foul-b'), reset('sco-b')"><i class="fas fa-redo"></i></button>
             </div>
         </section>
 
         <section class="team-card glass">
-            <input type="text" value="team2" class="player-input">
+            <input type="text" value="team 2" class="player-input">
             <div class="score-display f" id="sco-b">0</div>
             
             <div class="point-btns">
@@ -88,5 +91,6 @@
     </main>
     <a href="solo.html" class="back-btn" onclick="reset('sco-a'), reset('tol-a'), reset('tol-b'), reset('fo-a'), reset('foul-b'), reset('sco-b')"><i class="fas fa-chevron-left"></i> back</a>
     <script src="solo.js"></script>
+    <script src="time2.js"></script>
 </body>
 </html>

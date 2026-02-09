@@ -42,7 +42,9 @@ body {
     letter-spacing: 2px;
     opacity: 0.5;
 }
-
+label{
+    font-size: smaller;
+}
 .player-row {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
